@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<allFoods>
+    <food>
+        <name>Tereyağlı Pirinç Pilavı</name>
+        <calories>167</calories>
+        <ingredients>
+            <ingredient>Tereyağı</ingredient>
+            <ingredient>Pirinç</ingredient>
+        </ingredients>
+        <besinDegerleri>
+            <karbonhidrat>27.34</karbonhidrat>
+            <protein>2.44</protein>
+            <yag>5.09</yag>
+            <lif>0.49</lif>
+            <kolesterol>14.5</kolesterol>
+            <sodyum>192.5</sodyum>
+            <potasyum>37.13</potasyum>
+            <demir>0.22</demir>
+        </besinDegerleri>
+        <isVegan>0</isVegan>
+    </food>
+    <food>
+        <name>genel</name>
+        <calories>50</calories>
+        <ingredients>
+            <ingredient>Kırmızı Et</ingredient>
+            <ingredient>Balık Eti</ingredient>
+            <ingredient>İşlenmiş Et</ingredient>
+            <ingredient>Beyaz Et</ingredient>
+            <ingredient>Süt</ingredient>
+            <ingredient>Zeytin Yağı</ingredient>
+            <ingredient>Sıvı Yağ</ingredient>
+            <ingredient>abc</ingredient>
+            <ingredient>qwe</ingredient>
+            <ingredient>rty</ingredient>
+        </ingredients>
+        <besinDegerleri>
+            <karbonhidrat>1</karbonhidrat>
+            <protein>2</protein>
+            <yag>3</yag>
+            <lif>4</lif>
+            <kolesterol>5</kolesterol>
+            <sodyum>5</sodyum>
+            <potasyum>6</potasyum>
+            <demir>2</demir>
+        </besinDegerleri>
+        <isVegan>1</isVegan>
+    </food>
+</allFoods>
+
+

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">DietAppX</string>
+    <string name="name">Ad</string>
+    <string name="sex">Cinsiyet</string>
+    <string name="height">Boy(cm)</string>
+    <string name="weight">Kilo(kg)</string>
+    <string name="age">Yaş</string>
+    <string name="diyabet">Diyabet</string>
+    <string name="vejeteryan">Vejeteryan</string>
+    <string name="woman">Kadın</string>
+    <string name="man">Erkek</string>
+    <string name="title_activity_real_main">RealMainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
