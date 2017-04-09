@@ -87,7 +87,7 @@ public class KaloriHesaplamaActivity extends AppCompatActivity {
                     aktiviteDegeri=1.725;
                 }
                 else if (size.equals("Her gün çok çok ağır idmanlarım var")){
-                    aktiviteDegeri=1.9;
+                    aktiviteDegeri=1.91;
                 }
                 if(cinsiyet.equals("bayan")){
                     cinsiyetValue=665;
