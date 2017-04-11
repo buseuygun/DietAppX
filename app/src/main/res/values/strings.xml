@@ -15,4 +15,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="add">Ekle</string>
+    <string name="food_eaten">Bügün yenilen yemekler:</string>
 </resources>
