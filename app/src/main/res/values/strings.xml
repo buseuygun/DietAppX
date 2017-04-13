@@ -16,13 +16,11 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-
-    <string name="Egzersiz1">Nerdeyse hiç egzersiz yapmıyorum.</string>
+    <string name="Egzersiz1">Nerdeyse hiç egzersiz yapmıyorum</string>
     <string name="Egzersiz2">Haftada 1 ya da 2 kez hafif egzersizler yapıyorum</string>
     <string name="Egzersiz3">Haftada 4-5 gün spor yapıyorum</string>
     <string name="Egzersiz4">Neredeyse haftanın her günü ağır idmanlarım var</string>
     <string name="Egzersiz5">Her gün çok çok ağır idmanlarım var</string>
-
     <string name="vegan">vegan</string>
     <string name="vejetaryen">vejetaryen</string>
     <string name="reflü">reflü</string>
@@ -31,6 +29,7 @@
     <string name="kolesterol">kolesterol</string>
     <string name="çölyak">çölyak</string>
     <string name="ülser">ülser</string>
-
+    <string name="add">Ekle</string>
+    <string name="food_eaten">Bügün yenilen yemekler:</string>
 
 </resources>
