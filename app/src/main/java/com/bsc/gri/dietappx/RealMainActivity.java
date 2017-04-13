@@ -83,7 +83,7 @@ public class RealMainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            Intent i = new Intent(RealMainActivity.this, ProfilimActivity.class);
+            Intent i = new Intent(RealMainActivity.this, KaloriHesaplamaActivity.class);
             try {
                 startActivity(i);
             }

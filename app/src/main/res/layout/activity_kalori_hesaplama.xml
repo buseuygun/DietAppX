@@ -9,6 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.bsc.gri.dietappx.KaloriHesaplamaActivity">
+
     <TextView
         android:id="@+id/eT6"
         android:layout_width="wrap_content"
@@ -30,11 +31,11 @@
 
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="176dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
 
-            >
+            android:weightSum="1">
 
             <TextView
                 android:id="@+id/tv"
@@ -92,14 +93,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Sonuc:"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textStyle="bold" />
+
 
         </LinearLayout>
 
@@ -109,6 +103,7 @@
             android:layout_alignParentEnd="true"
 
             android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
             android:orientation="vertical">
 
             <RadioGroup
@@ -119,16 +114,13 @@
 
                 android:layout_below="@+id/textView10"
 
-                android:layout_margin="16dp"
-
-                android:layout_marginTop="16dp"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/bayan"
+                    android:id="@+id/kadın"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="bayan"
+                    android:text="Kadın"
 
 
                     />
@@ -137,7 +129,7 @@
                     android:id="@+id/erkek"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="erkek"
+                    android:text="Erkek"
 
                     />
 
@@ -150,60 +142,73 @@
                 android:layout_height="wrap_content"
 
 
-                />
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp" />
 
             <EditText
                 android:id="@+id/eT1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp" />
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="6dp"
+                android:ems="10" />
 
             <EditText
                 android:id="@+id/eT2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="2dp"
+                android:ems="10" />
 
             <EditText
                 android:id="@+id/eT3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:textStyle="bold" />
+                android:ems="10"
+                android:paddingTop="14dp" />
 
-            <TextView
-                android:id="@+id/tv6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:textStyle="bold" />
 
         </LinearLayout>
 
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tV"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/button7"
+        android:text="Kilonuzu korumak icin günlük almanız gereken kalori miktarı:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold" />
     <Button
         android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_alignParentRight="true"
-
-        android:layout_alignParentTop="false"
+        android:text="Hesapla"
         android:layout_below="@+id/anaLayout"
-        android:text="Hesapla" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="46dp" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/anaLayout"
-        android:layout_marginLeft="16dp"
+        android:lineSpacingExtra="12sp"
         android:text="       "
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="27dp" />
 </RelativeLayout>
 

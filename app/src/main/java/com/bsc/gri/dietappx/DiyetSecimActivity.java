@@ -2,6 +2,8 @@ package com.bsc.gri.dietappx;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.AutoCompleteTextView;
+
 
 public class DiyetSecimActivity extends AppCompatActivity {
 
