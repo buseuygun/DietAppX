@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class DiyetimActivity extends AppCompatActivity {
-
+    public Button button4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,23 +28,9 @@ public class DiyetimActivity extends AppCompatActivity {
         });
     }
 
-    public Button button4;
-    public TextView tvName = null;
-    public String strName = null;
-    public Bundle extras = null;
 
-    private void init() {
 
-        tvName = (TextView) findViewById(R.id.textView2);
 
-        extras = getIntent().getExtras();
-
-        if (extras != null) {
-            strName = extras.getString(ProfilEditActivity.NAME);
-            tvName.setText(strName);
-        }
-
-    }
 
 
 }

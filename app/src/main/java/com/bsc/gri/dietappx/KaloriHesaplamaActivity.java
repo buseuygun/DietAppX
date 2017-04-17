@@ -55,7 +55,7 @@ public class KaloriHesaplamaActivity extends AppCompatActivity {
     }
     public void addListenerOnButton() {
 
-        radioGroup = (RadioGroup) findViewById(R.id.rg1);
+        radioGroup = (RadioGroup) findViewById(R.id.rg_cinsiyet);
         btnDisplay = (Button) findViewById(R.id.button7);
 
         btnDisplay.setOnClickListener(new View.OnClickListener() {
@@ -99,9 +99,10 @@ public class KaloriHesaplamaActivity extends AppCompatActivity {
                     deger=(cinsiyetValue+(13.75*kilo)+(5*boy)-(6.8*yas))*aktiviteDegeri;
                 }
 
-                TextView myAwesomeTextView = (TextView)findViewById(R.id.textView15);
+                TextView myAwesomeTextView = (TextView)findViewById(R.id.hesaplanan_kalori);
 //in your OnCreate() method
                 myAwesomeTextView.setText(Double.toString(deger));
+
 
             }
 

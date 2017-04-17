@@ -86,7 +86,7 @@ public class RealMainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            Intent i = new Intent(RealMainActivity.this, KaloriHesaplamaActivity.class);
+            Intent i = new Intent(RealMainActivity.this, DiyetimActivity.class);
             try {
                 startActivity(i);
             }
@@ -96,17 +96,17 @@ public class RealMainActivity extends AppCompatActivity
             }
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-            Intent i = new Intent(RealMainActivity.this, ProfilEditActivity.class);
+            Intent i = new Intent(RealMainActivity.this, KaloriHesaplamaActivity.class);
             startActivity(i);
 
         } else if (id == R.id.nav_slideshow) {
-            Intent i = new Intent(RealMainActivity.this, DiyetimActivity.class);
+            Intent i = new Intent(RealMainActivity.this, KiloVermeAlgoritmasi.class);
             startActivity(i);
         } else if (id == R.id.nav_manage) {
-            Intent i = new Intent(RealMainActivity.this, ProfilimActivity.class);
+            Intent i = new Intent(RealMainActivity.this, KaloriHesaplamaIlkSayfa.class);
             startActivity(i);
         } else if(id== R.id.nav_manage2){
-            Intent i = new Intent(RealMainActivity.this, KaloriHesaplamaActivity.class);
+            Intent i = new Intent(RealMainActivity.this, KaloriHesaplamaIlkSayfa.class);
             startActivity(i);
         }else if(id== R.id.nav_manage3){
 
