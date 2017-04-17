@@ -18,6 +18,11 @@
             <demir>0.22</demir>
         </besinDegerleri>
         <isVegan>0</isVegan>
+        <tags>
+            <tag>bir tag</tag>
+            <tag>iki tag</tag>
+            <tag>üç tag</tag>
+        </tags>
     </food>
     <food>
         <name>genel</name>
@@ -45,6 +50,23 @@
             <demir>2</demir>
         </besinDegerleri>
         <isVegan>1</isVegan>
+        <tags>
+            <tag>Tatlı</tag>
+            <tag>Meyve</tag>
+            <tag>Yağlı</tag>
+            <tag>Alkol</tag>
+            <tag>Et</tag>
+            <tag>İşlenmiş Et</tag>
+            <tag>Katı Yağ</tag>
+            <tag>Sıvı Yağ</tag>
+            <tag>Bakliyat</tag>
+            <tag>Asitli İçecek</tag>
+            <tag>Kahve</tag>
+            <tag>Baharat</tag>
+            <tag>Kızartma</tag>
+            <tag>Haşlama</tag>
+            <tag>Izgara</tag>
+        </tags>
     </food>
 </allFoods>
 
