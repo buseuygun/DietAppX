@@ -103,6 +103,13 @@ public class KaloriHesaplamaActivity extends AppCompatActivity {
 //in your OnCreate() method
                 myAwesomeTextView.setText(Double.toString(deger));
 
+                try {
+                    int i = (int)deger;
+                    RealMainActivity.userData.setHesaplananKalori(i);
+                    //RealMainActivity realMainActivity = new RealMainActivity();
+                    //realMainActivity.SaveUserDataAsXML(RealMainActivity.userData);
+                }catch (Exception e){}
+
 
             }
 

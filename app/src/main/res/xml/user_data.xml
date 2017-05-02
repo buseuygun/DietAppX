@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <userData>
-    <userName></userName>
-    <cinsiyet></cinsiyet>
-    <boy></boy>
-    <kilo></kilo>
-    <yas></yas>
-    <isDiyabet></isDiyabet>
-    <isTansiyon></isTansiyon>
-    <isVegan></isVegan>
-    <isVejeteryan></isVejeteryan>
+    <userName>buse</userName>
+    <cinsiyet>kadın</cinsiyet>
+    <boy>175</boy>
+    <kilo>58</kilo>
+    <yas>21</yas>
+    <isDiyabet>1</isDiyabet>
+    <isTansiyon>true</isTansiyon>
+    <isVegan>false</isVegan>
+    <isVejeteryan>0</isVejeteryan>
     <isReflu></isReflu>
     <isKolesterol></isKolesterol>
     <isColyak></isColyak>
     <isGastrit></isGastrit>
     <alerjiler>
-        <alerji></alerji>
+        <alerji>fıstık</alerji>
     </alerjiler>
     <gunlukToplamFood>
         <calories></calories>

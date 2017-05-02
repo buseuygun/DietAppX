@@ -51,7 +51,7 @@
                android:layout_marginBottom="8dp"
 
                android:layout_marginTop="8dp"
-               android:text="Uyguladığım diyet:"
+               android:text="Uyguladığım diyetler:"
                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                android:textStyle="bold" />
 
@@ -63,6 +63,13 @@
 
                android:scrollbarStyle="insideInset"
                android:scrollbars="vertical">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginBottom="8dp"
+                   android:layout_marginTop="8dp"
+                   android:id="@+id/text_view_uyguladigim_diyetler"/>
 
 
            </ScrollView>
@@ -94,7 +101,12 @@
 
                 android:scrollbarStyle="insideInset"
                 android:scrollbars="vertical">
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:id="@+id/text_view_yasakli_besinler"/>
 
             </ScrollView>
         </LinearLayout>
@@ -125,7 +137,6 @@
                 android:id="@+id/hedefkalori"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
                 android:text="hedefkalori" />

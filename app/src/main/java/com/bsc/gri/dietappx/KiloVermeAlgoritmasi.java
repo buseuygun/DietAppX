@@ -1,6 +1,7 @@
 package com.bsc.gri.dietappx;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -79,7 +80,7 @@ public class KiloVermeAlgoritmasi extends AppCompatActivity {
                 }
 
 
-                if (isRadioButtonsChecked || evBoy != null || evYas != null || evKilo != null || selectedId != -1 || selectedIdkilover != -1) {
+                try{
                     double aktiviteDegeri = 1;
 
                     // find the radiobutton by returned id
@@ -122,23 +123,31 @@ public class KiloVermeAlgoritmasi extends AppCompatActivity {
                         cinsiyetValue = 66;
                         deger = (cinsiyetValue + (13.75 * kilo) + (5 * boy) - (6.8 * yas)) * aktiviteDegeri;
                     }
-                    if (haftalikKilovermeDegeri.equals("Haftada 0.25 kg")) {
+                    if (haftalikKilovermeDegeri.equals("Haftada 0.25 kg vermek")) {
                         negatif = -250;
                         deger = deger + negatif;
                     }
-                    if (haftalikKilovermeDegeri.equals("Haftada 0.50 kg(önerilen)")) {
+                    if (haftalikKilovermeDegeri.equals("Haftada 0.50 kg vermek")) {
                         negatif = -500;
-                        deger = deger + negatif;
-                    }
-                    if (haftalikKilovermeDegeri.equals("Haftada 1 kg")) {
-                        negatif = -1000;
                         deger = deger + negatif;
                     }
 
                     TextView myAwesomeTextView = (TextView) findViewById(R.id.kilover_hesaplanan_kalori);
 //in your OnCreate() method
                     myAwesomeTextView.setText(Double.toString(deger));
+                    try {
+                        int i = (int)deger;
+                        RealMainActivity.userData.setHesaplananKalori(i);
+                        //RealMainActivity realMainActivity = new RealMainActivity();
+                        //realMainActivity.SaveUserDataAsXML(RealMainActivity.userData);
+                    }catch (Exception e){}
+                    Intent i = new Intent(KiloVermeAlgoritmasi.this, DiyetSecimActivity.class);
+                    //i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(i);
 
+                }
+                catch(Exception e){
+                    Toast.makeText(KiloVermeAlgoritmasi.this, "eksik ve ya yanlış girdiniz!", Toast.LENGTH_LONG).show();
                 }
             }
 

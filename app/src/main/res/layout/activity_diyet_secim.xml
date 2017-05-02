@@ -70,7 +70,7 @@
 
 
                     <CheckBox
-                        android:id="@+id/reflü"
+                        android:id="@+id/reflu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -105,7 +105,7 @@
                         android:text="@string/tansiyon" />
 
                     <CheckBox
-                        android:id="@+id/çölyak"
+                        android:id="@+id/colyak"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -137,8 +137,7 @@
         android:layout_height="wrap_content"
 
         android:ems="8"
-        android:inputType="text"
-        android:text="kjhgfds" />
+        android:inputType="text"/>
 
 </LinearLayout>
 
@@ -156,30 +155,21 @@
                     android:id="@+id/km"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:layout_marginTop="16dp"
                     android:text="Günlük almayı hedeflediğim kalori miktarı:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-
-                    />
-
-
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
                 <EditText
                     android:id="@+id/editText2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="4"
-
                     android:inputType="number"
-                    android:layout_below="@+id/km"
-                    />
+                    android:layout_below="@+id/km"/>
 
                 <Button
                     android:id="@+id/button5"
                     style="@style/Widget.AppCompat.Button.Borderless.Colored"
-
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@id/editText2"

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -26,6 +27,15 @@ public class Food {
     private boolean isVegan;
     private ArrayList<String> ingredients = new ArrayList<>();
     private ArrayList<String> tags = new ArrayList<>();
+    private Date yenmeTarihi = new Date();
+
+    public Date getYenmeTarihi() {
+        return yenmeTarihi;
+    }
+
+    public void setYenmeTarihi(Date yenmeTarihi) {
+        this.yenmeTarihi = yenmeTarihi;
+    }
 
     public ArrayList<String> getTags() {
         return tags;
@@ -173,6 +183,18 @@ public class Food {
         }
 
         return stringBuilder.toString();
+    }
+
+    public ArrayList<String> GetAllIngredientsList(List<Food> fds){
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        for (Food fd : fds) {
+            for (String ingredient: fd.getIngredients()
+                 ) {
+                arrayList.add(ingredient);
+            }
+        }
+        return arrayList;
     }
 
 }

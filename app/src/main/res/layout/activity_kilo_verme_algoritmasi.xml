@@ -91,7 +91,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Haftada kaç kilo vermeyi hedefliyorsunuz?"
+                android:text="Haftalık Hedefiniz?"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textStyle="bold"
                 android:layout_margin="16dp"
@@ -188,21 +188,21 @@
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Haftada 0.25 kg"
+        android:text="Haftada 0.25 kg vermek"
         android:id="@+id/kilover_rb1"
 
         />
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Haftada 0.50 kg(önerilen)"
+        android:text="Haftada 0.50 kg vermek"
         android:id="@+id/kilover_rb2"
 
         />
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Haftada 1 kg"
+        android:text="Kilo vermek istemiyorum"
         android:id="@+id/kilover_rb3"
 
         />
@@ -223,12 +223,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/kilover_button"
-        android:text="Kilonuzu korumak icin günlük almanız gereken kalori miktarı:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold" />
     <Button
         android:id="@+id/kilover_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         android:text="Hesapla"
@@ -240,8 +239,6 @@
         android:id="@+id/kilover_hesaplanan_kalori"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="       "
         android:layout_below="@+id/kilover_miktar"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"

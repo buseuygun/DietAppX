@@ -23,7 +23,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class AddFoodActivity extends AppCompatActivity {
@@ -36,7 +40,10 @@ public class AddFoodActivity extends AppCompatActivity {
 
     }
 
+    public ArrayList<String> addedFood = new ArrayList<>();
+
     private void init(){
+
         foodNames.add("ilk");
         foodNames.add("ikinci");
         foodNames.add("üçüncü");
@@ -51,8 +58,11 @@ public class AddFoodActivity extends AppCompatActivity {
         textView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
-                Toast.makeText(AddFoodActivity.this, "A string resource provides text strings for your application with optional text styling and formatting", Toast.LENGTH_LONG).show();
+                //Toast.makeText(AddFoodActivity.this, "Done", Toast.LENGTH_LONG).show();
                 AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.auto_complete_text_view_foods);
+                TextView textViewSelectedFood = (TextView) findViewById(R.id.text_view_selected_food);
+                textViewSelectedFood.append(textView.getText());
+                addedFood.add(textViewSelectedFood.getText().toString());
                 textView.setText("");
                 //other logic
             }
@@ -61,8 +71,11 @@ public class AddFoodActivity extends AppCompatActivity {
     }
 
     public void Ekle_Click(View view){
-        deney();
-
+        //deney();
+//TODO seçilen yemekleri userdata ya al ve xml e kaydet
+        Date todaysDate = Calendar.getInstance().getTime();
+        NewSaveUserDataAsXML();
+        NewReadUserDataFromXML();
     }
 
     public void deney(){
@@ -72,20 +85,14 @@ public class AddFoodActivity extends AppCompatActivity {
         TextView textViewFoodEaten = (TextView) findViewById(R.id.text_view_food_eaten);
         textViewFoodEaten.setText(f1.GetFoodListString(foodList2));
     }
-    public static List<Food> foodList = new ArrayList<>();
+
     public static List<Food> foodList2 = new ArrayList<>();
     public static UserData userData = new UserData();
     public static ArrayList<String> foodNames = new ArrayList<>();
-    public static ArrayList<Food> selectedFoods = new ArrayList<>();
-    final String xmlFile = "userData";
+    final String xmlFile = "user_data";
 
     public void SaveUserDataAsXML() {
 
-        //XmlPullParser xpp = getResources().getXml(R.xml.food_db);
-
-
-        String userNAme = "username";
-        String password = "password";
         try {
             FileOutputStream fileos = openFileOutput(xmlFile, Context.MODE_PRIVATE);
             XmlSerializer xmlSerializer = Xml.newSerializer();
@@ -138,7 +145,299 @@ public class AddFoodActivity extends AppCompatActivity {
 
 
     }
+    public void NewSaveUserDataAsXML() {
 
+
+        userData=userData.CreateTestData();
+        try {
+            FileOutputStream fileos = openFileOutput(xmlFile, Context.MODE_PRIVATE);
+            XmlSerializer xmlSerializer = Xml.newSerializer();
+            StringWriter writer = new StringWriter();
+            xmlSerializer.setOutput(writer);
+            xmlSerializer.startDocument("UTF-8", true);
+            xmlSerializer.startTag(null, "userData");
+
+            xmlSerializer.startTag(null, "userName");
+            xmlSerializer.text(userData.getUserName());
+            xmlSerializer.endTag(null, "userName");
+            xmlSerializer.startTag(null, "cinsiyet");
+            xmlSerializer.text(userData.getCinsiyet());
+            xmlSerializer.endTag(null, "cinsiyet");
+            xmlSerializer.startTag(null, "boy");
+            xmlSerializer.text(Integer.toString(userData.getBoy()));
+            xmlSerializer.endTag(null, "boy");
+            xmlSerializer.startTag(null, "kilo");
+            xmlSerializer.text(Integer.toString(userData.getKilo()));
+            xmlSerializer.endTag(null, "kilo");
+            xmlSerializer.startTag(null, "yas");
+            xmlSerializer.text(Integer.toString(userData.getYas()));
+            xmlSerializer.endTag(null, "yas");
+
+            xmlSerializer.startTag(null, "isDiyabet");
+            xmlSerializer.text(Boolean.toString(userData.isDiyabet()));
+            xmlSerializer.endTag(null, "isDiyabet");
+            xmlSerializer.startTag(null, "isTansiyon");
+            xmlSerializer.text(Boolean.toString(userData.isTansiyon()));
+            xmlSerializer.endTag(null, "isTansiyon");
+            xmlSerializer.startTag(null, "isVegan");
+            xmlSerializer.text(Boolean.toString(userData.isVegan()));
+            xmlSerializer.endTag(null, "isVegan");
+            xmlSerializer.startTag(null, "isVejeteryan");
+            xmlSerializer.text(Boolean.toString(userData.isVejeteryan()));
+            xmlSerializer.endTag(null, "isVejeteryan");
+            xmlSerializer.startTag(null, "isReflu");
+            xmlSerializer.text(Boolean.toString(userData.isReflu()));
+            xmlSerializer.endTag(null, "isReflu");
+            xmlSerializer.startTag(null, "isKolesterol");
+            xmlSerializer.text(Boolean.toString(userData.isKolesterol()));
+            xmlSerializer.endTag(null, "isKolesterol");
+            xmlSerializer.startTag(null, "isColyak");
+            xmlSerializer.text(Boolean.toString(userData.isColyak()));
+            xmlSerializer.endTag(null, "isColyak");
+            xmlSerializer.startTag(null, "isGastrit");
+            xmlSerializer.text(Boolean.toString(userData.isGastrit()));
+            xmlSerializer.endTag(null, "isGastrit");
+
+            xmlSerializer.startTag(null, "alerjiler");
+            for (String alerji: userData.getAlerjilerList()) {
+                xmlSerializer.startTag(null, "alerji");
+                xmlSerializer.text(alerji);
+                xmlSerializer.endTag(null, "alerji");
+            }
+            xmlSerializer.endTag(null, "alerjiler");
+
+            xmlSerializer.startTag(null, "toplamFood");
+            xmlSerializer.startTag(null, "calories");
+            xmlSerializer.text(Integer.toString(userData.getGunlukToplamFood().getCalories()));
+            xmlSerializer.endTag(null, "calories");
+            xmlSerializer.startTag(null, "besinDegerleri");
+            xmlSerializer.startTag(null, "karbonhidrat");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getKarbonhidrat()));
+            xmlSerializer.endTag(null, "karbonhidrat");
+            xmlSerializer.startTag(null, "protein");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getProtein()));
+            xmlSerializer.endTag(null, "protein");
+            xmlSerializer.startTag(null, "yag");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getYag()));
+            xmlSerializer.endTag(null, "yag");
+            xmlSerializer.startTag(null, "lif");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getLif()));
+            xmlSerializer.endTag(null, "lif");
+            xmlSerializer.startTag(null, "kolesterol");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getKolesterol()));
+            xmlSerializer.endTag(null, "kolesterol");
+            xmlSerializer.startTag(null, "sodyum");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getSodyum()));
+            xmlSerializer.endTag(null, "sodyum");
+            xmlSerializer.startTag(null, "potasyum");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getPotasyum()));
+            xmlSerializer.endTag(null, "potasyum");
+            xmlSerializer.startTag(null, "demir");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getDemir()));
+            xmlSerializer.endTag(null, "demir");
+            xmlSerializer.endTag(null, "besinDegerleri");
+            xmlSerializer.endTag(null, "toplamFood");
+
+            xmlSerializer.startTag(null, "gunlukToplamFood");
+            xmlSerializer.startTag(null, "calories");
+            xmlSerializer.text(Integer.toString(userData.getGunlukToplamFood().getCalories()));
+            xmlSerializer.endTag(null, "calories");
+            xmlSerializer.startTag(null, "besinDegerleri");
+            xmlSerializer.startTag(null, "karbonhidrat");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getKarbonhidrat()));
+            xmlSerializer.endTag(null, "karbonhidrat");
+            xmlSerializer.startTag(null, "protein");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getProtein()));
+            xmlSerializer.endTag(null, "protein");
+            xmlSerializer.startTag(null, "yag");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getYag()));
+            xmlSerializer.endTag(null, "yag");
+            xmlSerializer.startTag(null, "lif");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getLif()));
+            xmlSerializer.endTag(null, "lif");
+            xmlSerializer.startTag(null, "kolesterol");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getKolesterol()));
+            xmlSerializer.endTag(null, "kolesterol");
+            xmlSerializer.startTag(null, "sodyum");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getSodyum()));
+            xmlSerializer.endTag(null, "sodyum");
+            xmlSerializer.startTag(null, "potasyum");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getPotasyum()));
+            xmlSerializer.endTag(null, "potasyum");
+            xmlSerializer.startTag(null, "demir");
+            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getDemir()));
+            xmlSerializer.endTag(null, "demir");
+            xmlSerializer.endTag(null, "besinDegerleri");
+            xmlSerializer.endTag(null, "gunlukToplamFood");
+
+            xmlSerializer.endTag(null, "userData");
+            xmlSerializer.endDocument();
+            xmlSerializer.flush();
+            String dataWrite = writer.toString();
+            fileos.write(dataWrite.getBytes());
+            fileos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+    public static UserData testUserData = new UserData();
+
+    public void NewReadUserDataFromXML() {
+
+        //TextView textView = (TextView) findViewById(R.id.text_view_dailyTotal);
+        ArrayList<String> localAlerjiList = new ArrayList<>();
+
+        try {
+            FileInputStream fis = getApplicationContext().openFileInput(xmlFile);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader bufferedReader = new BufferedReader(isr);
+
+            String receiveString;
+            StringBuilder stringBuilder = new StringBuilder();
+
+            while ((receiveString = bufferedReader.readLine()) != null) {
+                stringBuilder.append(receiveString);
+            }
+
+            fis.close();
+
+            String ret = stringBuilder.toString();
+            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+            factory.setNamespaceAware(true);
+            XmlPullParser xpp = factory.newPullParser();
+
+            //textView.append(ret + "\n");
+
+            xpp.setInput(new StringReader(ret));
+            while (xpp.getEventType() != XmlPullParser.END_DOCUMENT) {
+                if (xpp.getEventType() == XmlPullParser.START_TAG) {
+                    if (xpp.getName().equals("userName")) {
+                        xpp.next();
+                        testUserData.setUserName(xpp.getText());
+                    } else if (xpp.getName().equals("cinsiyet")) {
+                        xpp.next();
+                        testUserData.setCinsiyet(xpp.getText());
+                    } else if (xpp.getName().equals("boy")) {
+                        xpp.next();
+                        testUserData.setBoy(Integer.parseInt(xpp.getText()));
+                    } else if (xpp.getName().equals("kilo")) {
+                        xpp.next();
+                        testUserData.setKilo(Integer.parseInt(xpp.getText()));
+                    } else if (xpp.getName().equals("yas")) {
+                        xpp.next();
+                        testUserData.setYas(Integer.parseInt(xpp.getText()));
+                    } else if (xpp.getName().equals("isDiyabet")) {
+                        xpp.next();
+                        testUserData.setDiyabet(Boolean.parseBoolean(xpp.getText()));
+                    } else if (xpp.getName().equals("isTansiyon")) {
+                        xpp.next();
+                        testUserData.setTansiyon(Boolean.parseBoolean(xpp.getText()));
+                    } else if (xpp.getName().equals("isVegan")) {
+                        xpp.next();
+                        testUserData.setVegan(Boolean.parseBoolean(xpp.getText()));
+                    } else if (xpp.getName().equals("isVejeteryan")) {
+                        xpp.next();
+                        testUserData.setVejeteryan(Boolean.parseBoolean(xpp.getText()));
+                    } else if (xpp.getName().equals("isReflu")) {
+                        xpp.next();
+                        testUserData.setTansiyon(Boolean.parseBoolean(xpp.getText()));
+                    } else if (xpp.getName().equals("isKolesterol")) {
+                        xpp.next();
+                        testUserData.setTansiyon(Boolean.parseBoolean(xpp.getText()));
+                    } else if (xpp.getName().equals("isColyak")) {
+                        xpp.next();
+                        testUserData.setTansiyon(Boolean.parseBoolean(xpp.getText()));
+                    } else if (xpp.getName().equals("isGastrit")) {
+                        xpp.next();
+                        testUserData.setTansiyon(Boolean.parseBoolean(xpp.getText()));
+                    } else if (xpp.getName().equals("toplamFood")) {
+                        while (!(xpp.getName().equals("toplamFood")) && xpp.getEventType() != XmlPullParser.END_TAG) {
+                            if (xpp.getEventType() == XmlPullParser.START_TAG) {
+                                if(xpp.getName().equals("calories")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("karbonhidrat")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("protein")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("yag")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("lif")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("kolesterol")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("sodyum")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("potasyum")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("demir")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }
+                            }
+                            xpp.next();
+                        }
+                    } else if (xpp.getName().equals("gunlukToplamFood")) {
+                        while (!(xpp.getName().equals("gunlukToplamFood")) && xpp.getEventType() != XmlPullParser.END_TAG) {
+                            if (xpp.getEventType() == XmlPullParser.START_TAG) {
+                                if(xpp.getName().equals("calories")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("karbonhidrat")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("protein")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("yag")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("lif")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("kolesterol")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("sodyum")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("potasyum")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }else if(xpp.getName().equals("demir")){
+                                    xpp.next();
+                                    testUserData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                }
+                            }
+                            xpp.next();
+                        }
+                    } else if (xpp.getName().equals("alerjiler")) {
+                        while (!(xpp.getName().equals("alerjiler")) && xpp.getEventType() != XmlPullParser.END_TAG) {
+                            if (xpp.getEventType() == XmlPullParser.START_TAG) {
+                                if (xpp.getName().equals("alerji"))
+                                xpp.next();
+                                localAlerjiList.add(xpp.getText());
+                            }
+                            xpp.next();
+                        }
+                    }
+                }
+                xpp.next();
+            }
+            testUserData.setAlerjilerList(localAlerjiList);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public void ReadUserDataFromXML() {
 
         //TextView textView = (TextView) findViewById(R.id.text_view_dailyTotal);

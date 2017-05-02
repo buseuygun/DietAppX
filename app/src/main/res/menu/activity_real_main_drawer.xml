@@ -3,29 +3,26 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/a"
-            android:title="Profilim" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@android:drawable/ic_search_category_default"
-            android:title="Yemek Ekle" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/cheese"
-            android:title="Bugün ne yedim" />
-        <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_diyetim"
             android:icon="@drawable/apple"
             android:title="Diyetim" />
         <item
-            android:id="@+id/nav_manage2"
+            android:id="@+id/nav_add_food"
+            android:icon="@android:drawable/ic_search_category_default"
+            android:title="Yemek Ekle" />
+        <!--item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/cheese"
+            android:title="Bugün ne yedim" /-->
+
+        <item
+            android:id="@+id/nav_istatistikler"
             android:icon="@drawable/statistics"
             android:title="İstatistikler" />
-        <item
+        <!--item
             android:id="@+id/nav_manage3"
             android:icon="@android:drawable/ic_delete"
-            android:title="Yasaklı Besinlerim" />
+            android:title="Yasaklı Besinlerim" /-->
     </group>
 
 </menu>
