@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<userData>
+    <userName></userName>
+    <cinsiyet></cinsiyet>
+    <boy></boy>
+    <kilo></kilo>
+    <yas></yas>
+    <isDiyabet></isDiyabet>
+    <isTansiyon></isTansiyon>
+    <isVegan></isVegan>
+    <isVejeteryan></isVejeteryan>
+    <isReflu></isReflu>
+    <isKolesterol></isKolesterol>
+    <isColyak></isColyak>
+    <isGastrit></isGastrit>
+    <alerjiler>
+        <alerji></alerji>
+    </alerjiler>
+    <gunlukToplamFood>
+        <calories></calories>
+        <besinDegerleri>
+            <karbonhidrat></karbonhidrat>
+            <protein></protein>
+            <yag></yag>
+            <lif></lif>
+            <kolesterol></kolesterol>
+            <sodyum></sodyum>
+            <potasyum></potasyum>
+            <demir></demir>
+        </besinDegerleri>
+    </gunlukToplamFood>
+    <toplamFood>
+        <calories></calories>
+        <besinDegerleri>
+            <karbonhidrat></karbonhidrat>
+            <protein></protein>
+            <yag></yag>
+            <lif></lif>
+            <kolesterol></kolesterol>
+            <sodyum></sodyum>
+            <potasyum></potasyum>
+            <demir></demir>
+        </besinDegerleri>
+    </toplamFood>
+</userData>
