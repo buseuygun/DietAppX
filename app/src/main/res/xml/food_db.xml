@@ -69,6 +69,126 @@
             <tag>Unlu</tag>
         </tags>
     </food>
+    <food>
+        <name>Makarna</name>
+        <calories>167</calories>
+        <ingredients>
+            <ingredient>Tereyağı</ingredient>
+            <ingredient>Pirinç</ingredient>
+        </ingredients>
+        <besinDegerleri>
+            <karbonhidrat>27.34</karbonhidrat>
+            <protein>2.44</protein>
+            <yag>5.09</yag>
+            <lif>0.49</lif>
+            <kolesterol>14.5</kolesterol>
+            <sodyum>192.5</sodyum>
+            <potasyum>37.13</potasyum>
+            <demir>0.22</demir>
+        </besinDegerleri>
+        <isVegan>0</isVegan>
+        <tags>
+            <tag>bir tag</tag>
+            <tag>iki tag</tag>
+            <tag>üç tag</tag>
+        </tags>
+    </food>
+    <food>
+        <name>Kuru Fasülye</name>
+        <calories>167</calories>
+        <ingredients>
+            <ingredient>Tereyağı</ingredient>
+            <ingredient>Pirinç</ingredient>
+        </ingredients>
+        <besinDegerleri>
+            <karbonhidrat>27.34</karbonhidrat>
+            <protein>2.44</protein>
+            <yag>5.09</yag>
+            <lif>0.49</lif>
+            <kolesterol>14.5</kolesterol>
+            <sodyum>192.5</sodyum>
+            <potasyum>37.13</potasyum>
+            <demir>0.22</demir>
+        </besinDegerleri>
+        <isVegan>0</isVegan>
+        <tags>
+            <tag>bir tag</tag>
+            <tag>iki tag</tag>
+            <tag>üç tag</tag>
+        </tags>
+    </food>
+    <food>
+        <name>Ekmek</name>
+        <calories>167</calories>
+        <ingredients>
+            <ingredient>Tereyağı</ingredient>
+            <ingredient>Pirinç</ingredient>
+        </ingredients>
+        <besinDegerleri>
+            <karbonhidrat>27.34</karbonhidrat>
+            <protein>2.44</protein>
+            <yag>5.09</yag>
+            <lif>0.49</lif>
+            <kolesterol>14.5</kolesterol>
+            <sodyum>192.5</sodyum>
+            <potasyum>37.13</potasyum>
+            <demir>0.22</demir>
+        </besinDegerleri>
+        <isVegan>0</isVegan>
+        <tags>
+            <tag>bir tag</tag>
+            <tag>iki tag</tag>
+            <tag>üç tag</tag>
+        </tags>
+    </food>
+    <food>
+        <name>Börek</name>
+        <calories>167</calories>
+        <ingredients>
+            <ingredient>Tereyağı</ingredient>
+            <ingredient>Pirinç</ingredient>
+        </ingredients>
+        <besinDegerleri>
+            <karbonhidrat>27.34</karbonhidrat>
+            <protein>2.44</protein>
+            <yag>5.09</yag>
+            <lif>0.49</lif>
+            <kolesterol>14.5</kolesterol>
+            <sodyum>192.5</sodyum>
+            <potasyum>37.13</potasyum>
+            <demir>0.22</demir>
+        </besinDegerleri>
+        <isVegan>0</isVegan>
+        <tags>
+            <tag>bir tag</tag>
+            <tag>iki tag</tag>
+            <tag>üç tag</tag>
+        </tags>
+    </food>
+    <food>
+        <name>Tost</name>
+        <calories>167</calories>
+        <ingredients>
+            <ingredient>Tereyağı</ingredient>
+            <ingredient>Pirinç</ingredient>
+        </ingredients>
+        <besinDegerleri>
+            <karbonhidrat>27.34</karbonhidrat>
+            <protein>2.44</protein>
+            <yag>5.09</yag>
+            <lif>0.49</lif>
+            <kolesterol>14.5</kolesterol>
+            <sodyum>192.5</sodyum>
+            <potasyum>37.13</potasyum>
+            <demir>0.22</demir>
+        </besinDegerleri>
+        <isVegan>0</isVegan>
+        <tags>
+            <tag>bir tag</tag>
+            <tag>iki tag</tag>
+            <tag>üç tag</tag>
+        </tags>
+    </food>
 </allFoods>
 
 

@@ -155,12 +155,12 @@ public class Food {
                 this.getKolesterol() + "\n" + "Sodyum: " + this.getSodyum() + "\n" + "Potasyum: " +
                 this.getPotasyum() + "\n" + "Demir: " + this.getDemir() + "\n");
 
-        ArrayList<String> tgs = this.getTags();
-        if(tgs != null) {
+       /* ArrayList<String> tgs = this.getTags();
+        if (tgs != null) {
             for (String in : tgs) {
                 stringBuilder.append(in + "\n");
             }
-        }
+        }*/
 
         ArrayList<String> ing = this.getIngredients();
         if(ing != null) {
@@ -196,5 +196,17 @@ public class Food {
         }
         return arrayList;
     }
+
+    public ArrayList<String> GetAllFoodNamesList(List<Food> fds){
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        for (Food fd : fds) {
+
+                arrayList.add(fd.getName());
+
+        }
+        return arrayList;
+    }
+
 
 }

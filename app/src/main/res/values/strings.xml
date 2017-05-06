@@ -29,7 +29,8 @@
     <string name="kolesterol">kolesterol</string>
     <string name="çölyak">çölyak</string>
     <string name="ülser">ülser</string>
-    <string name="add">Ekle</string>
+    <string name="add">Kaydet</string>
+    <string name="geri_al">Geri Al</string>
     <string name="food_eaten">Bügün yenilen yemekler:</string>
 
 </resources>

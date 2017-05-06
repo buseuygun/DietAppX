@@ -232,32 +232,32 @@ public class RealMainActivity extends AppCompatActivity
             //TODO gunluktoplam yerine toplam food olacak
             xmlSerializer.startTag(null, "toplamFood");
             xmlSerializer.startTag(null, "calories");
-            xmlSerializer.text(Integer.toString(userData.getGunlukToplamFood().getCalories()));
+            xmlSerializer.text(Integer.toString(userData.getToplamFood().getCalories()));
             xmlSerializer.endTag(null, "calories");
             xmlSerializer.startTag(null, "besinDegerleri");
             xmlSerializer.startTag(null, "karbonhidrat");
-            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getKarbonhidrat()));
+            xmlSerializer.text(Float.toString(userData.getToplamFood().getKarbonhidrat()));
             xmlSerializer.endTag(null, "karbonhidrat");
             xmlSerializer.startTag(null, "protein");
-            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getProtein()));
+            xmlSerializer.text(Float.toString(userData.getToplamFood().getProtein()));
             xmlSerializer.endTag(null, "protein");
             xmlSerializer.startTag(null, "yag");
-            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getYag()));
+            xmlSerializer.text(Float.toString(userData.getToplamFood().getYag()));
             xmlSerializer.endTag(null, "yag");
             xmlSerializer.startTag(null, "lif");
-            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getLif()));
+            xmlSerializer.text(Float.toString(userData.getToplamFood().getLif()));
             xmlSerializer.endTag(null, "lif");
             xmlSerializer.startTag(null, "kolesterol");
-            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getKolesterol()));
+            xmlSerializer.text(Float.toString(userData.getToplamFood().getKolesterol()));
             xmlSerializer.endTag(null, "kolesterol");
             xmlSerializer.startTag(null, "sodyum");
-            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getSodyum()));
+            xmlSerializer.text(Float.toString(userData.getToplamFood().getSodyum()));
             xmlSerializer.endTag(null, "sodyum");
             xmlSerializer.startTag(null, "potasyum");
-            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getPotasyum()));
+            xmlSerializer.text(Float.toString(userData.getToplamFood().getPotasyum()));
             xmlSerializer.endTag(null, "potasyum");
             xmlSerializer.startTag(null, "demir");
-            xmlSerializer.text(Float.toString(userData.getGunlukToplamFood().getDemir()));
+            xmlSerializer.text(Float.toString(userData.getToplamFood().getDemir()));
             xmlSerializer.endTag(null, "demir");
             xmlSerializer.endTag(null, "besinDegerleri");
             xmlSerializer.endTag(null, "toplamFood");
@@ -384,28 +384,28 @@ public class RealMainActivity extends AppCompatActivity
                                     userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("karbonhidrat")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getToplamFood().setKarbonhidrat(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("protein")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getToplamFood().setProtein(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("yag")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getToplamFood().setYag(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("lif")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getToplamFood().setLif(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("kolesterol")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getToplamFood().setKolesterol(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("sodyum")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getToplamFood().setSodyum(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("potasyum")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getToplamFood().setPotasyum(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("demir")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getToplamFood().setDemir(Integer.parseInt(xpp.getText()));
                                 }
                             }
                             xpp.next();
@@ -415,31 +415,31 @@ public class RealMainActivity extends AppCompatActivity
                             if (xpp.getEventType() == XmlPullParser.START_TAG) {
                                 if(xpp.getName().equals("calories")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getGunlukToplamFood().setCalories(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("karbonhidrat")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getGunlukToplamFood().setKarbonhidrat(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("protein")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getGunlukToplamFood().setProtein(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("yag")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getGunlukToplamFood().setYag(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("lif")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getGunlukToplamFood().setLif(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("kolesterol")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getGunlukToplamFood().setKolesterol(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("sodyum")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getGunlukToplamFood().setSodyum(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("potasyum")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getGunlukToplamFood().setPotasyum(Integer.parseInt(xpp.getText()));
                                 }else if(xpp.getName().equals("demir")){
                                     xpp.next();
-                                    userData.getToplamFood().setCalories(Integer.parseInt(xpp.getText()));
+                                    userData.getGunlukToplamFood().setDemir(Integer.parseInt(xpp.getText()));
                                 }
                             }
                             xpp.next();
