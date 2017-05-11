@@ -14,6 +14,7 @@ public class UserData {
     private int kilo;
     private int yas;
     private int hesaplananKalori;
+    private int kalanKalori;
     private boolean isDiyabet;
     private boolean isTansiyon;
     private boolean isVegan;
@@ -26,6 +27,15 @@ public class UserData {
     private ArrayList<String> eatenFoodNames = new ArrayList<>();
     private Food toplamFood = new Food();
     private Food gunlukToplamFood = new Food();
+
+
+    public int getKalanKalori() {
+        return kalanKalori;
+    }
+
+    public void setKalanKalori(int kalanKalori) {
+        this.kalanKalori = kalanKalori;
+    }
 
     public Food getGunlukToplamFood() {
         return gunlukToplamFood;

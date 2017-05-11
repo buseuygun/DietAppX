@@ -152,8 +152,8 @@ public class Food {
         stringBuilder.append(this.getName() + "\n" + "Kalori:" + this.getCalories() + "\n" +
                 "Karbonhidrat:" + this.getKarbonhidrat() + "\n" + "Protein:" + this.getProtein() + "\n" +
                 "Yağ: " + this.getYag() + "\n" + "Lif: " + this.getLif() + "\n" + "Kolesterol: " +
-                this.getKolesterol() + "\n" + "Sodyum: " + this.getSodyum() + "\n" + "Potasyum: " +
-                this.getPotasyum() + "\n" + "Demir: " + this.getDemir() + "\n");
+                this.getKolesterol() + "\n" /*+ "Sodyum: " + this.getSodyum() + "\n" + "Potasyum: " +
+                this.getPotasyum() + "\n" + "Demir: " + this.getDemir() + "\n"*/);
 
        /* ArrayList<String> tgs = this.getTags();
         if (tgs != null) {
@@ -162,14 +162,17 @@ public class Food {
             }
         }*/
 
+
         ArrayList<String> ing = this.getIngredients();
         if(ing != null) {
+            stringBuilder.append("\nİçindekiler:" + "\n");
             for (String in : ing) {
                 stringBuilder.append(in + "\n");
             }
         }
-        if(this.isVegan())
-            stringBuilder.append("Vegan\n");
+        /*if(this.isVegan())
+            stringBuilder.append("Vegan\n");*/
+        stringBuilder.append("__________________\n");
 
         return stringBuilder.toString();
     }
@@ -206,6 +209,27 @@ public class Food {
 
         }
         return arrayList;
+    }
+    public String WriteFoodWitouthIng() {
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+
+        stringBuilder.append("Kalori:" + this.getCalories() + "\n" +
+                "Karbonhidrat:" + this.getKarbonhidrat() + "\n" + "Protein:" + this.getProtein() + "\n" +
+                "Yağ: " + this.getYag() + "\n" + "Lif: " + this.getLif() + "\n" + "Kolesterol: " +
+                this.getKolesterol() + "\n" /*+ "Sodyum: " + this.getSodyum() + "\n" + "Potasyum: " +
+                this.getPotasyum() + "\n" + "Demir: " + this.getDemir() + "\n"*/);
+
+       /* ArrayList<String> tgs = this.getTags();
+        if (tgs != null) {
+            for (String in : tgs) {
+                stringBuilder.append(in + "\n");
+            }
+        }*/
+
+
+        return stringBuilder.toString();
     }
 
 

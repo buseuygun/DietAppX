@@ -63,6 +63,13 @@ public class RealMainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        TextView textViewMainText = (TextView) findViewById(R.id.text_view_main_text);
+
+        if(userData.getHesaplananKalori()== 0)
+            textViewMainText.setText("Günlük ihtiyacınız olan kaloriyi hesaplamak için Menüden diyetimi seçebilirsiniz");
+        else
+        textViewMainText.setText("Gunluk kalori ihtiyacınız: "+userData.getHesaplananKalori());
+
         onStartOfApp();
     }
 
@@ -92,6 +99,8 @@ public class RealMainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent i = new Intent(RealMainActivity.this, DiyetimActivity.class);
+            startActivity(i);
             return true;
         }
 
@@ -111,8 +120,8 @@ public class RealMainActivity extends AppCompatActivity
             Intent i = new Intent(RealMainActivity.this, AddFoodActivity.class);
             startActivity(i);
         } else if(id== R.id.nav_istatistikler){
-            //Intent i = new Intent(RealMainActivity.this, KaloriHesaplamaIlkSayfa.class);
-            //startActivity(i);
+            Intent i = new Intent(RealMainActivity.this, IstatistiklerActivity.class);
+            startActivity(i);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
