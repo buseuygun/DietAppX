@@ -176,6 +176,7 @@ public class MainActivity extends AppCompatActivity {
         //TextView textView = (TextView) findViewById(R.id.text_view_dailyTotal);
         Food food = new Food();
         ArrayList<String> ingredients = new ArrayList<>();
+        ArrayList<String> tagsList = new ArrayList<>();
         //String gname;
 
 
@@ -228,6 +229,19 @@ public class MainActivity extends AppCompatActivity {
                         }
                         food.setIngredients(ingredients);
                         ingredients = new ArrayList<>();
+                    } else if (xpp.getName().equals("tags")) {
+                        xpp.next();
+                        while (!(xpp.getName().equals("tags"))) {
+                            if (xpp.getEventType() == XmlPullParser.START_TAG) {
+                                if (xpp.getName().equals("tag")) {
+                                    xpp.next();
+                                    tagsList.add(xpp.getText());
+                                }
+                            }
+                            xpp.next();
+                        }
+                        food.setTags(tagsList);
+                        tagsList = new ArrayList<>();
                     }
                 }
                 xpp.next();

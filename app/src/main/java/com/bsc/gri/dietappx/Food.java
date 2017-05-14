@@ -1,6 +1,13 @@
 package com.bsc.gri.dietappx;
 
+import android.support.v7.app.AppCompatActivity;
+
+import org.xmlpull.v1.XmlPullParser;
+
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 
 /**
  * Created by gri on 08.04.2017.
@@ -19,6 +26,24 @@ public class Food {
     private float demir;
     private boolean isVegan;
     private ArrayList<String> ingredients = new ArrayList<>();
+    private ArrayList<String> tags = new ArrayList<>();
+    private Date yenmeTarihi = new Date();
+
+    public Date getYenmeTarihi() {
+        return yenmeTarihi;
+    }
+
+    public void setYenmeTarihi(Date yenmeTarihi) {
+        this.yenmeTarihi = yenmeTarihi;
+    }
+
+    public ArrayList<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(ArrayList<String> tags) {
+        this.tags = tags;
+    }
 
     public Food() {
     }
@@ -119,29 +144,93 @@ public class Food {
         isVegan = vegan;
     }
 
-    public String WriteFood(Food food) {
+    public String WriteFood() {
 
         StringBuilder stringBuilder = new StringBuilder();
 
 
-        stringBuilder.append(food.getName() + "\n" + "Kalori:" + food.getCalories() + "\n" +
-                "Karbonhidrat:" + food.getKarbonhidrat() + "\n" + "Protein:" + food.getProtein() + "\n" +
-                "Yağ: " + food.getYag() + "\n" + "Lif: " + food.getLif() + "\n" + "Kolesterol: " +
-                food.getKolesterol() + "\n" + "Sodyum: " + food.getSodyum() + "\n" + "Potasyum: " +
-                food.getPotasyum() + "\n" + "Demir: " + food.getDemir() + "\n");
+        stringBuilder.append(this.getName() + "\n" + "Kalori:" + this.getCalories() + "\n" +
+                "Karbonhidrat:" + this.getKarbonhidrat() + "\n" + "Protein:" + this.getProtein() + "\n" +
+                "Yağ: " + this.getYag() + "\n" + "Lif: " + this.getLif() + "\n" + "Kolesterol: " +
+                this.getKolesterol() + "\n" /*+ "Sodyum: " + this.getSodyum() + "\n" + "Potasyum: " +
+                this.getPotasyum() + "\n" + "Demir: " + this.getDemir() + "\n"*/);
 
-        ArrayList<String> ing = food.getIngredients();
+       /* ArrayList<String> tgs = this.getTags();
+        if (tgs != null) {
+            for (String in : tgs) {
+                stringBuilder.append(in + "\n");
+            }
+        }*/
+
+
+        ArrayList<String> ing = this.getIngredients();
         if(ing != null) {
+            stringBuilder.append("\nİçindekiler:" + "\n");
             for (String in : ing) {
                 stringBuilder.append(in + "\n");
             }
         }
-        if(food.isVegan())
-            stringBuilder.append("Vegan");
+        /*if(this.isVegan())
+            stringBuilder.append("Vegan\n");*/
+        stringBuilder.append("__________________\n");
 
         return stringBuilder.toString();
     }
 
+    public String GetFoodListString(List<Food> fds){
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (Food fd : fds) {
+            stringBuilder.append(fd.WriteFood());
+        }
+
+        return stringBuilder.toString();
+    }
+
+    public ArrayList<String> GetAllIngredientsList(List<Food> fds){
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        for (Food fd : fds) {
+            for (String ingredient: fd.getIngredients()
+                 ) {
+                arrayList.add(ingredient);
+            }
+        }
+        return arrayList;
+    }
+
+    public ArrayList<String> GetAllFoodNamesList(List<Food> fds){
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        for (Food fd : fds) {
+
+                arrayList.add(fd.getName());
+
+        }
+        return arrayList;
+    }
+    public String WriteFoodWitouthIng() {
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+
+        stringBuilder.append("Kalori:" + this.getCalories() + "\n" +
+                "Karbonhidrat:" + this.getKarbonhidrat() + "\n" + "Protein:" + this.getProtein() + "\n" +
+                "Yağ: " + this.getYag() + "\n" + "Lif: " + this.getLif() + "\n" + "Kolesterol: " +
+                this.getKolesterol() + "\n" /*+ "Sodyum: " + this.getSodyum() + "\n" + "Potasyum: " +
+                this.getPotasyum() + "\n" + "Demir: " + this.getDemir() + "\n"*/);
+
+       /* ArrayList<String> tgs = this.getTags();
+        if (tgs != null) {
+            for (String in : tgs) {
+                stringBuilder.append(in + "\n");
+            }
+        }*/
+
+
+        return stringBuilder.toString();
+    }
 
 
 }

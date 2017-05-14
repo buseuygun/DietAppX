@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_diyet_secim"
     android:layout_width="match_parent"
@@ -9,35 +9,189 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.bsc.gri.dietappx.DiyetSecimActivity">
-    <TextView
-        android:id="@+id/textView6"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentTop="true"
-        android:layout_alignWithParentIfMissing="false"
-        android:layout_centerInParent="false"
-        android:layout_margin="16dp"
-        android:text="Aşağıdaki beslenme düzenlerinden, kendinize uygun olanını seçiniz:"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:orientation="vertical"
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignLeft="@+id/textView6"
-        android:layout_alignStart="@+id/textView6"
-        android:layout_below="@+id/textView6"
-        android:layout_margin="16dp"
-        android:background="@color/colorPrimaryDark"
         >
 
-        <RadioButton
-            android:id="@+id/radioButton1"
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
 
-            android:text="Vegan" />
-    </RadioGroup>
-</RelativeLayout>
+            >
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/Ll1"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/shape"
+                >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:text="Uyguladığım diyetler:"
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <RadioGroup
+                    android:id="@+id/rg1"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView6"
+
+                    >
+
+
+                    <CheckBox
+                        android:id="@+id/vegan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/vegan" />
+
+                    <CheckBox
+                        android:id="@+id/vejetaryen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="vejetaryen" />
+
+
+                    <CheckBox
+                        android:id="@+id/reflu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/reflü" />
+
+                    <CheckBox
+                        android:id="@+id/kolesterol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/kolesterol" />
+
+                    <CheckBox
+                        android:id="@+id/diyabet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/diyabet" />
+
+                    <CheckBox
+                        android:id="@+id/gastrit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/gastrit" />
+
+                    <CheckBox
+                        android:id="@+id/tansiyon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/tansiyon" />
+
+                    <CheckBox
+                        android:id="@+id/colyak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/çölyak" />
+                </RadioGroup>
+            </LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/Ll2"
+    android:layout_marginBottom="16dp"
+    android:orientation="vertical"
+    android:background="@drawable/shape"
+    android:layout_below="@+id/Ll1"
+    >
+
+    <TextView
+        android:id="@+id/tvd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Ll1"
+        android:layout_marginTop="16dp"
+        android:text="Tüketmediğim yemekler:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <AutoCompleteTextView
+        android:id="@+id/yasakli_Besin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:ems="8"
+        android:inputType="text"/>
+
+</LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/ll3"
+                android:background="@drawable/shape"
+                android:layout_below="@+id/Ll2"
+                >
+
+                <TextView
+                    android:id="@+id/km"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Günlük almayı hedeflediğim kalori miktarı:"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="4"
+                    android:inputType="number"
+                    android:layout_below="@+id/km"/>
+
+                <Button
+                    android:id="@+id/button5"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/editText2"
+                    android:layout_alignParentRight="true"
+                    android:text="Kalori hesaplayıcısına git" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+           android:text="kaydet"
+            android:id="@+id/kaydetDiyetSecim"
+            android:layout_gravity="right"
+
+            />
+    </LinearLayout>
+
+
+
+</ScrollView>
