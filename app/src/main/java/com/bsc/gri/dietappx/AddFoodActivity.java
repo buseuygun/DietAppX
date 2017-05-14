@@ -115,56 +115,67 @@ public class AddFoodActivity extends AppCompatActivity {
             }
         }
         if (RealMainActivity.userData.isVegan()) {
-            for (String tag : gFood.getTags()
-                    ) {
-                if (tag.equals(tagConstants.Et) || tag.equals(tagConstants.SutUrunu) || tag.equals(tagConstants.Balik)
-                        || tag.equals(tagConstants.IslenmisEt) || tag.equals(tagConstants.KatiYag)) {
-                    PromptUser(gFood.getName() + " yiyeceğinde "+tag +" etiketi var. Vegan diyetinize uygun değil" + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+
+                if (!gFood.isVegan()) {
+                    PromptUser(gFood.getName() + "Vegan diyetinize uygun değil \n\nYine de eklemek ister misiniz?");
                 }
-            }
+
         }
         if (RealMainActivity.userData.isVejeteryan()) {
             for (String tag : gFood.getTags()
                     ) {
                 if (tag.equals(tagConstants.Et) || tag.equals(tagConstants.Balik)
                         || tag.equals(tagConstants.IslenmisEt)) {
-                    PromptUser(gFood.getName() + " yiyeceğinde "+tag +" etiketi var. Vejeteryan diyetinize uygun değil." + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+                    PromptUser(gFood.getName() + " yiyeceği "+tag +" kategorisinde. Vejeteryan diyetinize uygun değil." + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
                 }
             }
         }
         if (RealMainActivity.userData.isTansiyon()) {
             for (String tag : gFood.getTags()
                     ) {
-                if (tag.equals(tagConstants.Et)) {
-                    PromptUser(gFood.getName() + " yiyeceğinde "+tag +" etiketi var. Tansiyon diyetinize uygun değil " + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+                if (tag.equals(tagConstants.Kahve) || tag.equals(tagConstants.Ekmek) || tag.equals(tagConstants.IslenmisEt )
+                        || tag.equals(tagConstants.Kizartma) || tag.equals(tagConstants.AlkolluIcecek)
+                        || tag.equals(tagConstants.AsitliIcecek) || tag.equals(tagConstants.Tatli)) {
+                    if (tag.equals(tagConstants.Kizartma)){sistemOnerisi="\n(Kızartma yerine daha sağlıklı bir pişirme yöntemini tercih edebilirsiz)";}
+                    if (tag.equals(tagConstants.IslenmisEt)){sistemOnerisi="\n(İşlenmiş et yerine yağsız kırmızı et ya da beyaz et yemeyi tercih edebilirsiz)";}
+                    if (tag.equals(tagConstants.Tatli)){sistemOnerisi="\n(Tatlı yerine meyve yemeyi tercih edebilirsiz)";}
+                    PromptUser(gFood.getName() + " yiyeceği "+tag +" kategorisinde. Tansiyon diyetinize uygun değil " + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+                    sistemOnerisi="";
                 }
             }
         }
         if (RealMainActivity.userData.isReflu()) {
             for (String tag : gFood.getTags()
                     ) {
-                if (tag.equals(tagConstants.Kizartma) || tag.equals(tagConstants.Yagli) || tag.equals(tagConstants.AlkolluIcecek) ) {
-                    if (tag.equals(tagConstants.Kizartma)){sistemOnerisi="\n(Kızartma yerine haşlama yemeyi tercih edebilirsiz)";}
-                    PromptUser(gFood.getName() + " yiyeceğinde "+tag +" etiketi var. Reflü diyetinize uygun değil. " + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+                if (tag.equals(tagConstants.Kizartma) || tag.equals(tagConstants.Yagli) || tag.equals(tagConstants.AlkolluIcecek) ||tag.equals(tagConstants.AsitliIcecek) ) {
+                    if (tag.equals(tagConstants.Kizartma)){sistemOnerisi="\n(Kızartma yerine daha sağlıklı bir pişirme yöntemini tercih edebilirsiz)";}
+                    PromptUser(gFood.getName() + " yiyeceği "+tag +" kategorisinde. Reflü diyetinize uygun değil. " + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+                    sistemOnerisi="";
                 }
             }
         }
         if (RealMainActivity.userData.isKolesterol()) {
             for (String tag : gFood.getTags()
                     ) {
-                if (tag.equals(tagConstants.Et)) {
-                    PromptUser(gFood.getName() + " yiyeceğinde "+tag +" etiketi var. Kolesterol diyetinize uygun değil. " + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+                if (tag.equals(tagConstants.Yagli) || tag.equals(tagConstants.Kizartma) || tag.equals(tagConstants.Tatli)
+                        || tag.equals(tagConstants.KatiYag) || tag.equals(tagConstants.IslenmisEt)) {
+                    if (tag.equals(tagConstants.Kizartma)){sistemOnerisi="\n(Kızartma yerine daha sağlıklı bir pişirme yöntemini tercih edebilirsiz)";}
+                    if (tag.equals(tagConstants.IslenmisEt)){sistemOnerisi="\n(İşlenmiş et yerine yağsız beyaz et yemeyi tercih edebilirsiz)";}
+                    if (tag.equals(tagConstants.Tatli)){sistemOnerisi="\n(Tatlı yerine meyve yemeyi tercih edebilirsiz)";}
+                    if(tag.equals(tagConstants.KatiYag)){sistemOnerisi="\n(Katı yağ içeren besinler yerine zeytin yağı içeren yemeyi tercih edebilirsiz)";}
+                    PromptUser(gFood.getName() + " yiyeceği "+tag +" kategorisinde. Kolesterol diyetinize uygun değil. " + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+                    sistemOnerisi="";
                 }
             }
         }
         if (RealMainActivity.userData.isGastrit()) {
             for (String tag : gFood.getTags()
                     ) {
-                if (tag.equals(tagConstants.Yagli) || tag.equals(tagConstants.Kizartma) || tag.equals(tagConstants.Tatli)
-                        || tag.equals(tagConstants.AlkolluIcecek)|| tag.equals(tagConstants.Kahve)) {
-                    if(tag.equals(tagConstants.Kizartma)){sistemOnerisi="\n(Kızartma yerine haşlama yemeyi tercih edebilirsiz)";}
+                if (tag.equals(tagConstants.Yagli) || tag.equals(tagConstants.Kizartma) || tag.equals(tagConstants.Tatli )
+                        || tag.equals(tagConstants.AlkolluIcecek)|| tag.equals(tagConstants.Kahve) ||tag.equals(tagConstants.AsitliIcecek)) {
+                    if(tag.equals(tagConstants.Kizartma)){sistemOnerisi="\n(Kızartma yerine daha sağlıklı bir pişirme yöntemini tercih edebilirsiz)";}
                     if(tag.equals(tagConstants.Tatli)){sistemOnerisi="\n(Tatlı yerine meyve yemeyi tercih edebilirsiz)";}
-                    PromptUser(gFood.getName() + " yiyeceğinde "+tag +" etiketi var. Gastrit diyetinize uygun değil. " + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+                    PromptUser(gFood.getName() + " yiyeceği "+tag +" kategorisinde. Gastrit diyetinize uygun değil. " + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
                     sistemOnerisi="";
                 }
             }
@@ -172,16 +183,24 @@ public class AddFoodActivity extends AppCompatActivity {
         if (RealMainActivity.userData.isDiyabet()) {
             for (String tag : gFood.getTags()
                     ) {
-                if (tag.equals(tagConstants.Et)) {
-                    PromptUser(gFood.getName() + " yiyeceğinde "+tag +" etiketi var. Diyabet diyetinize uygun değil. " + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+                if (tag.equals(tagConstants.Unlu) || tag.equals(tagConstants.Ekmek) || tag.equals(tagConstants.AsitliIcecek)
+                        || tag.equals(tagConstants.KatiYag) || tag.equals(tagConstants.Kizartma)) {
+                    if (tag.equals(tagConstants.Kizartma)){sistemOnerisi="\n(Kızartma yerine daha sağlıklı bir pişirme yöntemini tercih edebilirsiz)";}
+                    if(tag.equals(tagConstants.KatiYag)){sistemOnerisi="\n(Katı yağ içeren besinler yerine zeytin yağı içeren besinleri tercih edebilirsiz)";}
+                    if(tag.equals(tagConstants.Tatli)){sistemOnerisi="\n(Tatlı yerine tatlandırıcı kullanılmış besinleri yemeyi tercih edebilirsiz)";}
+                    PromptUser(gFood.getName() + " yiyeceği "+tag +" kategorisinde. Diyabet diyetinize uygun değil. " + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+                    sistemOnerisi="";
                 }
             }
         }
         if (RealMainActivity.userData.isColyak()) {
             for (String tag : gFood.getTags()
                     ) {
-                if (tag.equals(tagConstants.Et)) {
-                    PromptUser(gFood.getName() + " yiyeceğinde "+tag +" etiketi var. Çölyak diyetinize uygun değil. " + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+                if (tag.equals(tagConstants.Ekmek) || tag.equals(tagConstants.DiyetEkmek) || tag.equals(tagConstants.Unlu)) {
+                    if(tag.equals(tagConstants.Ekmek)){sistemOnerisi="\n(Ekmek yerine pilav yemeyi tercih edebilirsiz)";}
+                    if(tag.equals(tagConstants.Unlu)){sistemOnerisi="\n(Un içeren mamüller yerine pirinç unlu besinleri tercih edebilirsiz)";}
+                    PromptUser(gFood.getName() + " yiyeceği "+tag +" kategorisinde. Çölyak diyetinize uygun değil. " + sistemOnerisi + "\n\nYine de eklemek ister misiniz?");
+                    sistemOnerisi="";
                 }
             }
         }
