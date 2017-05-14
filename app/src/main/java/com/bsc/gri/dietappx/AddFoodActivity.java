@@ -117,7 +117,7 @@ public class AddFoodActivity extends AppCompatActivity {
         if (RealMainActivity.userData.isVegan()) {
 
                 if (!gFood.isVegan()) {
-                    PromptUser(gFood.getName() + "Vegan diyetinize uygun değil \n\nYine de eklemek ister misiniz?");
+                     PromptUser(gFood.getName() + "Vegan diyetinize uygun değil \n\nYine de eklemek ister misiniz?");
                 }
 
         }
